@@ -16,12 +16,16 @@ body {
 
 .calculateButton {
     margin-top: 15px;
-    font-size: 1.4rem;
+    font-size: 2.1rem;
     line-height: 1.6;
 }
 
+.lapTimeGroup {
+    display: inline-flex;
+}
+
 .inputField {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     margin-bottom: 10px;
 }
 
@@ -31,12 +35,29 @@ body {
     margin-bottom: 5px;
 }
 
+.inputField input, select {
+    font-size: 1.6rem;
+}
+
+.inputField input{
+    width: 5rem;
+}
+
+.inputField #inputHasPaceLap {
+    height: 2rem;
+}
+
 #results .label {
-    font-size: 1.5rem;
+    font-size: 2rem;
+}
+
+#results .label span {
+    font-size: 1.1rem;
+    font-style: italic;
 }
 
 #results .value {
-    font-size: 2rem;
-    font-weight: 400;
+    font-size: 2.5rem;
+    font-weight: 600;
     margin-bottom: 10px;
 }

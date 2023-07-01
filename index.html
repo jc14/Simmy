@@ -2,29 +2,28 @@
     <script src="index.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css" />
     <script>onStart();</script>
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Roboto">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto">
     <title>Sim Racing Helper</title>
 </head>
 
 <body>
     <div class="fuelCalculator">
-        <h1>Fuel Calculator</h1>
+        <h1 style="font-size: 4rem;">Fuel Calculator</h1>
         <form>
-            <div class="inputField">
-                <label>Minutes</label>
-                <input id="inputMinutes" type="number" step="1" min="0" max="15" value="1" />
-            </div>
-            <div class="inputField">
-                <label>Seconds</label>
-                <input id="inputSeconds" type="number" step="1" min="0" max="59" value="30" />
+            <div style="font-size: 2rem;">Lap time</div>
+            <div class="lapTimeGroup">
+                <div class="inputField" style="margin-right: 10px;">
+                    <label>Minutes</label>
+                    <input id="inputMinutes" type="number" step="1" min="0" max="15" value="1" />
+                </div>
+                <div class="inputField" style="margin-left: 10px;">
+                    <label>Seconds</label>
+                    <input id="inputSeconds" type="number" step="1" min="0" max="59" value="30" />
+                </div>
             </div>
             <div class="inputField">
                 <label>Race Length</label>
                 <input id="inputRaceLength" type="number" step="1" min="1" value="20" />
-            </div>
-            <div class="inputField">
-                <label>Race Length Type</label>
                 <select id="inputRaceLengthType">
                     <option selected value="minutes">Minutes</option>
                     <option value="laps">Laps</option>
@@ -42,14 +41,14 @@
             <input class="calculateButton" type="button" value="Calculate" onclick="calculateFuel()" />
         </form>
 
-        <hr/>
+        <hr />
 
         <div id="results">
             <div class="label">Exact fuel for race</div>
             <div class="value" id="exactFuel">--</div>
-            <div class="label">Risky fuel for race</div>
+            <div class="label">Risky fuel for race <span>(+.5 laps)</span></div>
             <div class="value" id="riskyFuel">--</div>
-            <div class="label">Safe fuel for race</div>
+            <div class="label">Safe fuel for race <span>(+1 laps)</span></div>
             <div class="value" id="safeFuel">--</div>
         </div>
     </div>
