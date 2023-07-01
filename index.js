@@ -31,7 +31,7 @@ function calculateFuel () {
         totalLaps++;
     }
 
-    document.getElementById('exactFuel').innerHTML = totalLaps * inputFuelPerLap;
-    document.getElementById('riskyFuel').innerHTML = (totalLaps + .5) * inputFuelPerLap;
-    document.getElementById('safeFuel').innerHTML = (totalLaps + 1) * inputFuelPerLap;
+    document.getElementById('exactFuel').innerHTML = (totalLaps * inputFuelPerLap).toFixed(2);
+    document.getElementById('riskyFuel').innerHTML = ((totalLaps + .5) * inputFuelPerLap).toFixed(2);
+    document.getElementById('safeFuel').innerHTML = ((totalLaps + 1) * inputFuelPerLap).toFixed(2);
 }
