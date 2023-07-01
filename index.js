@@ -14,8 +14,6 @@ function calculateFuel () {
     var inputHasPaceLap = document.getElementById('inputHasPaceLap').checked;
     var inputFuelPerLap = Number.parseFloat(document.getElementById('inputFuelPerLap').value);
 
-    console.log(inputHasPaceLap);
-
     var lapInSeconds = 60 * inputMinutes + inputSeconds;
     var totalLaps = 0;
     switch (inputRaceLengthType) {
