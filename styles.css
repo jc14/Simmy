@@ -1,0 +1,42 @@
+html {
+    background-color: rgb(40, 43, 70);
+    color: white;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+}
+
+.fuelCalculator {
+    width: auto;
+    margin: 15px 5%;
+    text-align: center;
+}
+
+.calculateButton {
+    margin-top: 15px;
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+.inputField {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.inputField label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+#results .label {
+    font-size: 1.5rem;
+}
+
+#results .value {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
