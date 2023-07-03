@@ -36,6 +36,10 @@
             <div class="inputField">
                 <label>Fuel used per lap</label>
                 <input id="inputFuelPerLap" type="number" step=".1" min="0" value="1" />
+                <select id="inputFuelUnitType">
+                    <option selected value="gal">Gallons</option>
+                    <option value="l">Liters</option>
+                </select>
             </div>
 
             <input class="calculateButton" type="button" value="Calculate" onclick="calculateFuel()" />

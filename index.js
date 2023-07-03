@@ -13,6 +13,7 @@ function calculateFuel () {
     var inputRaceLengthType = document.getElementById('inputRaceLengthType').value;
     var inputHasPaceLap = document.getElementById('inputHasPaceLap').checked;
     var inputFuelPerLap = Number.parseFloat(document.getElementById('inputFuelPerLap').value);
+    var inputFuelUnitType = document.getElementById('inputFuelUnitType').value;
 
     var lapInSeconds = 60 * inputMinutes + inputSeconds;
     var totalLaps = 0;
@@ -29,7 +30,27 @@ function calculateFuel () {
         totalLaps++;
     }
 
-    document.getElementById('exactFuel').innerHTML = (totalLaps * inputFuelPerLap).toFixed(2);
-    document.getElementById('riskyFuel').innerHTML = ((totalLaps + .5) * inputFuelPerLap).toFixed(2);
-    document.getElementById('safeFuel').innerHTML = ((totalLaps + 1) * inputFuelPerLap).toFixed(2);
+    var exactFuel = totalLaps * inputFuelPerLap;
+    var exactFuelString = `${exactFuel.toFixed(2)}`
+    var riskyFuel = (totalLaps + .5) * inputFuelPerLap;
+    var riskyFuelString = `${riskyFuel.toFixed(2)}`
+    var safeFuel = (totalLaps + 1) * inputFuelPerLap;
+    var safeFuelString = `${safeFuel.toFixed(2)}`
+
+    switch (inputFuelUnitType) {
+        case 'gal':
+            exactFuelString += ` gal (${(exactFuel * 3.78541).toFixed(2)} L)`;
+            riskyFuelString += ` gal (${(riskyFuel * 3.78541).toFixed(2)} L)`;
+            safeFuelString += ` gal (${(safeFuel * 3.78541).toFixed(2)} L)`;
+            break;
+        case 'l':
+            exactFuelString += ` L (${(exactFuel * 0.264172).toFixed(2)} gal)`;
+            riskyFuelString += ` L (${(riskyFuel * 0.264172).toFixed(2)} gal)`;
+            safeFuelString += ` L (${(safeFuel * 0.264172).toFixed(2)} gal)`;
+            break;
+    }
+
+    document.getElementById('exactFuel').innerHTML = exactFuelString;
+    document.getElementById('riskyFuel').innerHTML = riskyFuelString;
+    document.getElementById('safeFuel').innerHTML = safeFuelString;
 }
