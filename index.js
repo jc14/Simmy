@@ -1,12 +1,14 @@
 function onStart() {
-    // alert('oh hey there!');
+    document.getElementById('fuelCalculatorForm').addEventListener('submit', calculateFuel);
 }
 
 function handleButtonClick() {
     alert('Why the fuck would you click me!?');
 }
 
-function calculateFuel () {
+function calculateFuel (event) {
+    event.preventDefault();
+
     var inputMinutes = Number.parseInt(document.getElementById('inputMinutes').value);
     var inputSeconds = Number.parseInt(document.getElementById('inputSeconds').value);
     var inputRaceLength = Number.parseInt(document.getElementById('inputRaceLength').value);
@@ -29,6 +31,8 @@ function calculateFuel () {
     if (inputHasPaceLap) {
         totalLaps++;
     }
+
+    document.getElementById('oppositeFuelUnitValue').innerHTML = inputFuelUnitType === 'gal' ? `${(inputFuelPerLap * 3.78541).toFixed(2)} L / lap` : `${(inputFuelPerLap * 0.264172).toFixed(2)} gal / lap`;
 
     var exactFuel = totalLaps * inputFuelPerLap;
     var exactFuelString = `${exactFuel.toFixed(2)}`

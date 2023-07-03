@@ -1,7 +1,6 @@
 <head>
     <script src="index.js"></script>
     <link rel="stylesheet" type="text/css" href="styles.css" />
-    <script>onStart();</script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto">
     <title>Sim Racing Helper</title>
 </head>
@@ -9,7 +8,7 @@
 <body>
     <div class="fuelCalculator">
         <h1 style="font-size: 4rem;">Fuel Calculator</h1>
-        <form>
+        <form id="fuelCalculatorForm">
             <div style="font-size: 2rem;">Lap time</div>
             <div class="lapTimeGroup">
                 <div class="inputField" style="margin-right: 10px;">
@@ -18,7 +17,7 @@
                 </div>
                 <div class="inputField" style="margin-left: 10px;">
                     <label>Seconds</label>
-                    <input id="inputSeconds" type="number" step="1" min="0" max="59" value="30" />
+                    <input id="inputSeconds" type="number" step=".1" min="0" max="59" value="30" />
                 </div>
             </div>
             <div class="inputField">
@@ -35,14 +34,14 @@
             </div>
             <div class="inputField">
                 <label>Fuel used per lap</label>
-                <input id="inputFuelPerLap" type="number" step=".1" min="0" value="1" />
+                <input id="inputFuelPerLap" type="number" step=".01" min="0" value="1" />
                 <select id="inputFuelUnitType">
                     <option selected value="gal">Gallons</option>
                     <option value="l">Liters</option>
                 </select>
             </div>
-
-            <input class="calculateButton" type="button" value="Calculate" onclick="calculateFuel()" />
+            <div id="oppositeFuelUnitValue">--</div>
+            <input class="calculateButton" type="submit" value="Calculate" />
         </form>
 
         <hr />
@@ -57,5 +56,9 @@
         </div>
     </div>
 </body>
+
+<footer>
+    <script>onStart();</script>
+</footer>
 
 <!-- Hey! Stop looking at the source code, ya creep! -->
