@@ -36,10 +36,13 @@ function calculateFuel (event) {
 
     var exactFuel = totalLaps * inputFuelPerLap;
     var exactFuelString = `${exactFuel.toFixed(2)}`
+    var exactLapsString = `${totalLaps} laps`
     var riskyFuel = (totalLaps + .5) * inputFuelPerLap;
     var riskyFuelString = `${riskyFuel.toFixed(2)}`
+    var riskyLapsString = `${totalLaps + .5} laps`
     var safeFuel = (totalLaps + 1) * inputFuelPerLap;
     var safeFuelString = `${safeFuel.toFixed(2)}`
+    var safeLapsString = `${totalLaps + 1} laps`
 
     switch (inputFuelUnitType) {
         case 'gal':
@@ -55,6 +58,9 @@ function calculateFuel (event) {
     }
 
     document.getElementById('exactFuel').innerHTML = exactFuelString;
+    document.getElementById('exactLaps').innerHTML = exactLapsString;
     document.getElementById('riskyFuel').innerHTML = riskyFuelString;
+    document.getElementById('riskyLaps').innerHTML = riskyLapsString;
     document.getElementById('safeFuel').innerHTML = safeFuelString;
+    document.getElementById('safeLaps').innerHTML = safeLapsString;
 }
